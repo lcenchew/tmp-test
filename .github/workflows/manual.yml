@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Revert Push
-        uses: lcenchew/revert-push
+        uses: lcenchew/revert-push@v.0.0.3
         with:
           branch: ${{ github.event.inputs.branch }}
