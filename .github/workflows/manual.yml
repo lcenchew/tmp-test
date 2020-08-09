@@ -1,0 +1,16 @@
+name: Manual Revert Push Action
+on: 
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to revert latest commit'
+        required: true
+        default: 'master'
+
+jobs:
+  revert:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Revert Push
+        uses: lcenchew/revert-push@v0.0.1
+        with: ${{ github.event.inputs.branch }}
