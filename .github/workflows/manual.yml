@@ -17,6 +17,6 @@ jobs:
           ref: ${{ github.event.inputs.branch }}
           fetch-depth: 0 
       - name: Revert Push
-        uses: lcenchew/revert-push@v0.0.7
+        uses: lcenchew/revert-push@v0.0.8
         with:
           branch: ${{ github.event.inputs.branch }}
