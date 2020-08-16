@@ -1,4 +1,4 @@
-name: Manual Merge Remote Action
+name: Test Merge Upstream v0.3 Action
 on: 
   workflow_dispatch:
     inputs:
@@ -6,10 +6,14 @@ on:
         description: 'Upstream repository owner/name. Eg. exions/merge-upstream'
         required: true
         default: '0xGG/crossnote'
+      upstream-branch:
+        description: 'Upstream branch. Eg. master'
+        required: true
+        default: 'feat/V3'
       branch:
         description: 'Branch to merge'
         required: true
-        default: 'master'
+        default: 'feat/V3'
 
 jobs:
   merge-upstream:
@@ -21,7 +25,8 @@ jobs:
           ref: ${{ github.event.inputs.branch }}
           fetch-depth: 0 
       - name: Merge Upstream
-        uses: exions/merge-upstream@v0.3.1
+        uses: exions/merge-upstream@useing-composite
         with:
           upstream: ${{ github.event.inputs.upstream }}
+          upstream-branch: ${{ github.event.inputs.upstream-branch }}
           branch: ${{ github.event.inputs.branch }}
