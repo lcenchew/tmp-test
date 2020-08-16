@@ -14,7 +14,7 @@ jobs:
           ref: ${{ github.event.inputs.branch }}
           fetch-depth: 0 
       - name: Merge Upstream
-        uses: exions/merge-upstream@v1
+        uses: exions/merge-upstream@v0.4
         with:
           upstream: 0xGG/crossnote    # set the upstream repo
           branch: feat/title-bar      # set the branch to merge
