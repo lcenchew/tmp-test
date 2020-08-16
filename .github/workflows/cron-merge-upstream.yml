@@ -1,7 +1,7 @@
 name: Scheduled Merge Remote Action
 on: 
   schedule:
-    - cron: '0,15 * * * *'
+    - cron: '30,45 * * * *'
 
 jobs:
   merge-upstream:
@@ -10,10 +10,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: /feat/caret-color
+          ref: feat/caret-color
           fetch-depth: 0 
       - name: Merge Upstream
         uses: exions/merge-upstream@v0.4
         with:
           upstream: 0xGG/crossnote    # set the upstream repo
-          branch: /feat/caret-color   # set the branch to merge
+          branch: feat/caret-color   # set the branch to merge
