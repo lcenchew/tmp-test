@@ -1,0 +1,20 @@
+name: Scheduled Merge Remote Action
+on: 
+  schedule:
+    - cron: '40,50 * * * 1'
+    # scheduled for 00:00 every Monday
+
+jobs:
+  merge-upstream:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.branch }}
+          fetch-depth: 0 
+      - name: Merge Upstream
+        uses: exions/merge-upstream@v1
+        with:
+          upstream: 0xGG/crossnote    # set the upstream repo
+          branch: feat/title-bar      # set the branch to merge
