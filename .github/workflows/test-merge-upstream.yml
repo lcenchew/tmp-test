@@ -25,7 +25,7 @@ jobs:
           ref: ${{ github.event.inputs.branch }}
           fetch-depth: 0 
       - name: Merge Upstream
-        uses: exions/merge-upstream@useing-composite
+        uses: exions/merge-upstream@using-composite
         with:
           upstream: ${{ github.event.inputs.upstream }}
           upstream-branch: ${{ github.event.inputs.upstream-branch }}
