@@ -5,7 +5,7 @@ on:
       upstream:
         description: 'Upstream repository owner/name. Eg. exions/merge-upstream'
         required: true
-        default: 'master'
+        default: '0xGG/crossnote'
       branch:
         description: 'Branch to merge'
         required: true
